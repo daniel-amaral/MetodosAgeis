@@ -1,0 +1,32 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="public/stylesheets/home.css">
+</head>
+
+<html>
+	<body>
+		<h2 style="margin-bottom: 20px; font-weight: bold;">Ache sua prova</h2>
+
+		<div ng-repeat="disciplina in disciplinas">
+			<h4>{{disciplina.disciplina}} - {{disciplina.curso}}</h4>
+			<div ng-repeat="semestre in disciplina.semestres | orderBy: '-semestre'" style="margin-left:20px;">
+				<h5>
+					<span ng-click="semestre.expanded = !semestre.expanded">
+						<span class="glyphicon" aria-hidden="true"
+						 	ng-class="semestre.expanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'">
+						 </span>
+						<span style="cursor: pointer;">
+							{{semestre.semestre}}
+						</span>
+					</span>
+				</h5>
+				<div class="semestre-content" ng-show="semestre.expanded">
+					<div ng-repeat="prova in semestre.provas" style="margin-left:20px;">
+						<h6><a href="{{prova.href}}" target="_blank">{{prova.titulo}}</a></h6>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+</html>

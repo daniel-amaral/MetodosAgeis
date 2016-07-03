@@ -1,0 +1,7 @@
+.glyphicon-chevron-right, 
+.glyphicon-chevron-down {
+	font-size: 11px;
+	vertical-align: top;
+	margin-right: .3em;
+	cursor: pointer;
+}
