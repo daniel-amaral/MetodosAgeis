@@ -1,4 +1,4 @@
-# MetodosAgeis
+# Métodos Ágeis
 
 Como é necessário que haja um servidor para que o projeto angular consiga fazer o roteamento das páginas, criei um projeto Node.js básico, já que nunca trabalhei com o Laravel. Acredito que seja extremamente fácil migrar o projeto para o novo servidor.
 
