@@ -3,30 +3,56 @@
 </head>
 
 <html>
-	<body>
-		<h2 style="margin-bottom: 20px; font-weight: bold;">Ache sua prova</h2>
+<body>
+	<h2 style="margin-bottom: 20px; font-weight: bold;">Ache sua prova</h2>
 
-		<div ng-repeat="disciplina in disciplinas">
-			<h4>{{disciplina.disciplina}} - {{disciplina.curso}}</h4>
-			<div ng-repeat="semestre in disciplina.semestres | orderBy: '-semestre'" style="margin-left:20px;">
-				<h5>
-					<span ng-click="semestre.expanded = !semestre.expanded">
+	<div ng-repeat="instituicao in instituicoes">
+		<h4><br>{{instituicao.instituicao}}<br></h4>	
+		<div ng-repeat="curso in instituicao.cursos | orderBy: '-curso'" style="margin-left:20px;">
+			<span ng-click="curso.expanded = !curso.expanded">
+				<span class="glyphicon" aria-hidden="true"
+				ng-class="curso.expanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'">
+			</span>
+			{{curso.curso}}
+			<div class="curso-content" ng-show="curso.expanded">
+
+				<div ng-repeat="disciplina in curso.disciplinas | orderBy: '-disciplina'" style="margin-left:20px;">
+
+					<span ng-click="disciplina.expanded = !disciplina.expanded">
 						<span class="glyphicon" aria-hidden="true"
-						 	ng-class="semestre.expanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'">
-						 </span>
+							ng-class="disciplina.expanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'">
+						</span>
 						<span style="cursor: pointer;">
-							{{semestre.semestre}}
+								{{disciplina.disciplina}}
 						</span>
 					</span>
-				</h5>
-				<div class="semestre-content" ng-show="semestre.expanded">
-					<div ng-repeat="prova in semestre.provas" style="margin-left:20px;">
-						<h6><a href="{{prova.href}}" target="_blank">{{prova.titulo}}</a></h6>
+
+					<div class="disciplina-content" ng-show="disciplina.expanded">
+						<div ng-repeat="semestre in disciplina.semestres | orderBy: '-semestre'" style="margin-left:20px;">
+							<h6>
+								<span ng-click="semestre.expanded = !semestre.expanded">
+									<span class="glyphicon" aria-hidden="true"
+										ng-class="semestre.expanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'">
+									</span>
+									<span style="cursor: pointer;">
+										{{semestre.semestre}}
+									</span>
+								</span>
+							</h6>
+
+							<div class="semestre-content" ng-show="semestre.expanded">
+								<div ng-repeat="prova in semestre.provas" style="margin-left:20px;">
+									<h6><a href="{{prova.href}}" target="_blank">{{prova.titulo}}</a></h6>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
 		</div>
+</span>
+</div>
+</div>
 
 
-	</body>
+</body>
 </html>
