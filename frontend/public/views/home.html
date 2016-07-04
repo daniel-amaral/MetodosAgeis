@@ -7,16 +7,21 @@
 	<h2 style="margin-bottom: 20px; font-weight: bold;">Ache sua prova</h2>
 
 	<div ng-repeat="instituicao in instituicoes">
-		<h4><br>{{instituicao.instituicao}}<br></h4>	
+		<h4 style="margin: 10px 0px;">
+			{{instituicao.instituicao}}
+		</h4>	
 		<div ng-repeat="curso in instituicao.cursos | orderBy: '-curso'" style="margin-left:20px;">
-			<span ng-click="curso.expanded = !curso.expanded">
+			<span ng-click="curso.expanded = !curso.expanded" style="margin: 10px 0px;">
 				<span class="glyphicon" aria-hidden="true"
-				ng-class="curso.expanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'">
+					ng-class="curso.expanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'">
+				</span>
+				<span style="cursor: pointer;">
+					{{curso.curso}}
+				</span>
 			</span>
-			{{curso.curso}}
 			<div class="curso-content" ng-show="curso.expanded">
 
-				<div ng-repeat="disciplina in curso.disciplinas | orderBy: '-disciplina'" style="margin-left:20px;">
+				<div ng-repeat="disciplina in curso.disciplinas | orderBy: 'disciplina'" style="margin-left:20px;">
 
 					<span ng-click="disciplina.expanded = !disciplina.expanded">
 						<span class="glyphicon" aria-hidden="true"
@@ -29,7 +34,7 @@
 
 					<div class="disciplina-content" ng-show="disciplina.expanded">
 						<div ng-repeat="semestre in disciplina.semestres | orderBy: '-semestre'" style="margin-left:20px;">
-							<h6>
+							<span class="semestre">
 								<span ng-click="semestre.expanded = !semestre.expanded">
 									<span class="glyphicon" aria-hidden="true"
 										ng-class="semestre.expanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'">
@@ -38,11 +43,12 @@
 										{{semestre.semestre}}
 									</span>
 								</span>
-							</h6>
-
+							</span>
 							<div class="semestre-content" ng-show="semestre.expanded">
 								<div ng-repeat="prova in semestre.provas" style="margin-left:20px;">
-									<h6><a href="{{prova.href}}" target="_blank">{{prova.titulo}}</a></h6>
+									<span class="prova">
+										<a href="{{prova.href}}" target="_blank">{{prova.titulo}}</a>
+									</span>
 								</div>
 							</div>
 						</div>

@@ -226,11 +226,11 @@ app.controller('HomeCrtl', function($scope){
 
 		},
 		{
-			curso: "Instituto de Matematica",
+			curso: "Instituto de Matemática (IM)",
 			expanded: false,
 			disciplinas: [
 			{
-				disciplina: "Calculo I",
+				disciplina: "Cálculo I",
 				expanded: false,
 				semestres: [
 				{
@@ -271,16 +271,16 @@ app.controller('HomeCrtl', function($scope){
 				]
 			},
 			{
-				disciplina: "Calculo II",
+				disciplina: "Cálculo II",
 				expanded: false,
 				semestres: [
 				{
-					semestre: "2015.2",
+					semestre: "2015.1",
 					expanded: false,
 					provas: [
 					{
 						titulo: "P1",
-						href: "public/resources/files/UFRJ/IM/CALCULO2/2015-2-P1.pdf"
+						href: "public/resources/files/UFRJ/IM/CALCULO2/2015-1-P1.pdf"
 					}
 					]
 				},
