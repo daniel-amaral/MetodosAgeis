@@ -256,15 +256,7 @@ app.controller('HomeCrtl', function($scope){
 					provas: [
 					{
 						titulo: "P1",
-						href: "public/resources/files/UFRJ/IM/CALCULO1/2014-2-P1.pdf"
-					},
-					{
-						titulo: "P2",
-						href: "public/resources/files/UFRJ/IM/CALCULO1/2014-2-P2.pdf"
-					},
-					{
-						titulo: "P3",
-						href: "public/resources/files/UFRJ/IM/CALCULO1/2014-2-P3.pdf"
+						href: "public/resources/files/UFRJ/IM/CALCULO1/2014-1-P1.pdf"
 					}
 					]
 				}
@@ -285,7 +277,7 @@ app.controller('HomeCrtl', function($scope){
 					]
 				},
 				{
-					semestre: "2014.1",
+					semestre: "2014.2",
 					expanded: false,
 					provas: [
 					{
@@ -297,7 +289,7 @@ app.controller('HomeCrtl', function($scope){
 						href: "public/resources/files/UFRJ/IM/CALCULO2/2014-2-P2.pdf"
 					},
 					{
-						titulo: "P3",
+						titulo: "PF",
 						href: "public/resources/files/UFRJ/IM/CALCULO2/2014-2-PF.pdf"
 					}
 					]
